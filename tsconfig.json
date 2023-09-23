@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // Allow work with commonjs syntax
+    // Allow work with imports in modules
+    // Instead require() and module.export() use import from
+    "allowSyntheticDefaultImports": true,
+    // If library does not have default import (Need use import * as ...)
+    // This flag allow to work as always (import .. from)
+    "esModuleInterop": true,
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
