@@ -4,9 +4,10 @@
     "noImplicitAny": true,
     "module": "ESNext",
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
+    //"baseUrl": ".",
     // Allow work with commonjs syntax
     // Allow work with imports in modules
     // Instead require() and module.export() use import from
