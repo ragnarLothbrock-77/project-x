@@ -15,7 +15,7 @@ export const App = () => {
       <button onClick={toggleTheme}>Toggle theme</button>
       <Link to={'/'}>Main</Link>
       <Link to={'/about'}>About</Link>
-     <Suspense fallback={'Loading...'}>
+     <Suspense fallback={'Loading........'}>
        <Routes>
          <Route path={'/'} element={<MainPageLazy />}/>
          <Route path={'/about'} element={<AboutPageLazy />}/>
