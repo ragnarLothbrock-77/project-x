@@ -4,9 +4,9 @@ function classNames(cls: string, modes: Modes = {}, additional: string[] = []): 
   return [
     cls,
     ...additional.filter(Boolean),
-    ...Object.keys(modes).filter(className => modes[className])
+    ...Object.keys(modes).filter((className) => modes[className]),
   ]
-    .join(' ')
+    .join(' ');
 }
 
-export { classNames as cn }
+export { classNames as cn };
