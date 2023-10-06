@@ -19,6 +19,29 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     use: ['@svgr/webpack'],
   }
 
+  // Babel
+  const babelLoader = {
+    test: /\.(js|jsx|ts|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            'i18next-extract',
+            {
+              locales: ['en', 'ru'],
+              keyAsDefaultValue: false,
+              saveMissing: true,
+              outputPath: 'public/locales/{{locale}}/{{ns}}.json',
+            },
+          ],
+        ],
+      },
+    },
+  };
+
 
   // If not use TS, have to add Babel loader
   const typescriptLoader = {
@@ -48,9 +71,10 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
     }
 
   return [
-    typescriptLoader,
     scssLoader,
     SVGRLoader,
-    fileLoader
+    fileLoader,
+    babelLoader,
+    typescriptLoader,
   ]
 }
